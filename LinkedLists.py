@@ -56,6 +56,7 @@ def insert(head, val):
     Inserts a value into a sorted linked list
     '''
     assert isinstance(head, ListNode) or head is None
+    assert type(val) == type(head.val)
 
     if head is None:
         return ListNode(val)
@@ -68,7 +69,7 @@ def insert(head, val):
         return newNode
     
     head.next = insert(head.next, val)
-    
+
     return head
 
 data = [1, 2, 3, 'a', 'b', 'c']
