@@ -41,7 +41,7 @@ def toArray(head):
 
 def printList(head):
     '''
-    Prints out the values of a linked lis like an array
+    Prints out the values of a linked list
     '''
     assert isinstance(head, ListNode) or head is None
 
