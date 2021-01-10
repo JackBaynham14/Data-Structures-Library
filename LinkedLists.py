@@ -71,9 +71,3 @@ def insert(head, val):
     head.next = insert(head.next, val)
 
     return head
-
-data = [1, 2, 3, 'a', 'b', 'c']
-head = fromArray(data)
-printList(head)
-data = toArray(head)
-print(data)
