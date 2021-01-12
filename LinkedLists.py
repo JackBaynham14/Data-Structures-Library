@@ -29,7 +29,7 @@ def toArray(head):
     '''
     Creates an array from a linked list
     '''
-    assert isinstance(head, ListNode) or head is None
+    assert head is None or isinstance(head, ListNode)
 
     if head is None:
         return []
@@ -40,7 +40,7 @@ def printList(head):
     '''
     Prints out the values of a linked list
     '''
-    assert isinstance(head, ListNode) or head is None
+    assert head is None or isinstance(head, ListNode)
 
     if head is None:
         return
@@ -52,8 +52,8 @@ def insert(head, val):
     '''
     Inserts a value into a sorted linked list
     '''
-    assert isinstance(head, ListNode) or head is None
-    assert type(val) == type(head.val)
+    assert head is None or isinstance(head, ListNode)
+    assert head is None or type(val) == type(head.val)
 
     if head is None:
         return ListNode(val)
