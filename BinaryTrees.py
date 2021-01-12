@@ -56,14 +56,3 @@ def traverse(head, order='in'):
     
     else:
         return traverse(head.left, 'post') + traverse(head.right, 'post') + [head.val]
-
-data = [3, 2, 1, 5, 4]
-head = fromArray(data)
-
-preOrder = traverse(head, 'pre')
-inOrder = traverse(head, 'in')
-postOrder = traverse(head, 'post')
-
-print(preOrder)
-print(inOrder)
-print(postOrder)
