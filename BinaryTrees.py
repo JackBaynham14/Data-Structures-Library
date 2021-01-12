@@ -13,7 +13,8 @@ def insert(root, val):
     '''
     Inserts a value into a binary search tree
     '''
-    assert isinstance(root, TreeNode) or root is None
+    assert root is None or isinstance(root, TreeNode)
+    assert root is None or type(val) == type(root.val)
 
     if root is None:
         return TreeNode(val)
@@ -24,3 +25,15 @@ def insert(root, val):
         root.left = insert(root.left, val)
     
     return root
+
+def fromArray(data, root=None):
+    '''
+    Creates a binary search tree from an array
+    '''
+    assert isinstance(data, list)
+
+    if data == []:
+        return
+    
+    root = fromArray(data[:-1], root)
+    return insert(root, data[-1])
