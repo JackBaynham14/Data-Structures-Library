@@ -37,3 +37,33 @@ def fromArray(data, root=None):
     
     root = fromArray(data[:-1], root)
     return insert(root, data[-1])
+
+def traverse(head, order='in'):
+    '''
+    Returns an array of the specified traversal of the binary search tree
+    '''
+    assert isinstance(head, TreeNode) or head is None
+    assert order in ['pre', 'in', 'post']
+
+    if head is None:
+        return []
+    
+    if order == 'pre':
+        return  [head.val] + traverse(head.left, 'pre') + traverse(head.right, 'pre')
+
+    elif order == 'in':
+        return traverse(head.left, 'in') + [head.val] + traverse(head.right, 'in')
+    
+    else:
+        return traverse(head.left, 'post') + traverse(head.right, 'post') + [head.val]
+
+data = [3, 2, 1, 5, 4]
+head = fromArray(data)
+
+preOrder = traverse(head, 'pre')
+inOrder = traverse(head, 'in')
+postOrder = traverse(head, 'post')
+
+print(preOrder)
+print(inOrder)
+print(postOrder)
