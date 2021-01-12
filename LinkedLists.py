@@ -10,9 +10,6 @@ class ListNode:
     def __init__(self, val=None):
         self.val = val
         self.next = None
-    
-    def __str__(self):
-        return f'[{self.val}] -> {repr(self.next)}'
 
 def fromArray(data):
     '''
