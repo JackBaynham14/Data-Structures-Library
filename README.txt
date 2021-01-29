@@ -4,3 +4,5 @@ my computer science courses.
 Data Structures:
 - Linked Lists
 - Binary Search Trees
+- Stack
+- Queue
